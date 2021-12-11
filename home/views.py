@@ -25,7 +25,7 @@ def contact(request):
         email = request.POST['email']
         message = request.POST['message']
         ins = models.Contact(name=name, email=email, message=message)
-        ins.save()
+        ins.save() # save to db
         print("data has been saved")
     return render(request, 'contact.html')
 
