@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>css</title>
-    <!-- <link rel="stylesheet" href="css/master.css"></link.> -->
+    <!-- <link rel="stylesheet" href="master.css"></link.> -->
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -21,7 +21,7 @@
         justify-content: center;
         align-items: center;
         padding: 10px;
-        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        background: linear-gradient(135deg, #909396, #030303);
     }
     
     .container {
@@ -47,7 +47,7 @@
         height: 3px;
         width: 30px;
         border-radius: 5px;
-        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        background: linear-gradient(135deg, #8e9194, #030303);
     }
     
     .content form .user-details {
@@ -82,7 +82,7 @@
     
     .user-details .input-box input:focus,
     .user-details .input-box input:valid {
-        border-color: #9b59b6;
+        border-color: #2e2731;
     }
     
     form .gender-details .gender-title {
@@ -116,8 +116,8 @@
     #dot-1:checked~.category label .one,
     #dot-2:checked~.category label .two,
     #dot-3:checked~.category label .three {
-        background: #9b59b6;
-        border-color: #d9d9d9;
+        background: #909396;
+        border-color: #2e2731;
     }
     
     form input[type="radio"] {
@@ -140,12 +140,12 @@
         letter-spacing: 1px;
         cursor: pointer;
         transition: all 0.3s ease;
-        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        background: linear-gradient(135deg, #8e9194, #030303);
     }
     
     form .button input:hover {
         /* transform: scale(0.99); */
-        background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+        background: linear-gradient(-135deg, #8e9194, #030303);
     }
     
     @media(max-width: 584px) {
@@ -179,7 +179,6 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
     }
     
@@ -192,15 +191,15 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 800spx;
-        height: 450px;
+        width: 900px;
+        height: 600px;
         display: flex;
-        box-shadow: 0 1px 20px rgba(135deg, #71b7e6, #9b59b6);
+        box-shadow: 0 1px 20px rgba(135deg, #8e9194, #030303);
     }
     
     .wrapper .left {
         width: 50%;
-        background: linear-gradient(to right, #71b7e6, #9b59b6);
+        background: linear-gradient(to right, #8e9194, #030303);
         padding: 30px 25px;
         border-top-left-radius: 5px;
         text-align: center;
@@ -208,8 +207,8 @@
     }
     
     .wrapper .left img {
-        margin-bottom: 10px;
-        border-bottom: 5px;
+        margin-bottom: 30px;
+        border-bottom: 20px;
     }
     
     .wrapper .left h4 {
@@ -217,7 +216,7 @@
     }
     
     .wrapper .left p {
-        font-size: 12px;
+        font-size: 20px;
     }
     
     .wrapper .right {
@@ -225,12 +224,63 @@
         background: #fff;
         border-bottom-right-radius: 5px;
         border-bottom-right-radius: 5px;
-        padding: 25px;
+        padding: 40px;
     }
     
-    .wrapper .right .info,
-    .wrapper .right .projects {
-        margin-bottom: 25px;
+    .wrapper,
+    .container1 {
+        margin-bottom: 40px;
+    }
+    
+    .right .info {
+        font-size: 25px;
+        font-weight: 500;
+        position: relative;
+    }
+    
+    .right .info::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 30px;
+        border-radius: 5px;
+        background: linear-gradient(135deg, #8e9194, #030303);
+    }
+    
+    .right .projects {
+        font-size: 25px;
+        font-weight: 500;
+        position: relative;
+    }
+    
+    .right .projects::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 30px;
+        height: 3px;
+        width: 30px;
+        border-radius: 5px;
+        background: linear-gradient(135deg, #8e9194, #030303);
+    }
+    
+    .container1 .title1 {
+        font-size: 25px;
+        font-weight: 500;
+        position: relative;
+    }
+    
+    .container1 .title1::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 30px;
+        border-radius: 5px;
+        background: linear-gradient(135deg, #8e9194, #030303);
     }
 </style>
 
@@ -238,32 +288,57 @@
     <div class="wrapper">
         <div class="left">
             <img src="https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png" alt="user" width="100">
-            <h4> user's name</h4>
+            <h4 name="user"> user's name</h4>
             <p>front end developer</p>
         </div>
         <div class="right">
             <div class="info">
                 <h3>information</h3>
-                <div class="info_data">
-                    <div class="data">
-                        <h4>Email</h4>
-                        <p>usermail15@gmail.com</p>
-                    </div>
-                    <div class="data">
-                        <h4>phone number</h4>
-                        <p>01020560589</p>
+            </div>
+            <div class="info_data">
+                <div class="data">
+                    <h4>Email:</h4>
+                    <p name="email">usermail15@gmail.com</p>
+                </div>
+                <div class="data">
+                    <h4>phone number:</h4>
+                    <p name="phone">01020560589</p>
+                </div>
+            </div>
+            <div class="container1">
+                <div class="title1">documents</div>
+                <div class="content1">
+                    <form action="#"></form>
+                    <div class="document_details1">
+                        <div class="input_box1">
+                            <span class="details"></span>
+                            <h3 class="link"> <a href="https://drive.google.com/drive/folders/1svliQVQMMWg-aLp3rJWJQrxMrVZVQZPq" target="_blank">Information System</a></h3>
+                        </div>
+                        <div class="input_box1">
+                            <span class="details"></span>
+                            <h3 class="link"> <a href="https://drive.google.com/drive/folders/1t7uRHvPPktOWOU2jBxJ_woRv2OVz6j1i" target="_blank">Technical Writing</a></h3>
+                        </div>
+                        <div class="input_box1">
+                            <span class="details"></span>
+                            <h3 class="link"> <a href="https://drive.google.com/drive/folders/1sxi4ITMxsnWlrefq4Q_FZJ6yvUKzqSgO" target="_blank"> OOP</a></h3>
+                        </div>
+                        <div class="input_box1">
+                            <span class="details"></span>
+                            <h3 class="link"> <a href="https://drive.google.com/drive/folders/1t2CS2VAjj42Wp87sM_dMr5M_lbsVdV70" target="_blank"> Math 3</a></h3>
+                        </div>
+                        <div class="input_box1">
+                            <span class="details"></span>
+                            <h3 class="link"> <a href="https://drive.google.com/drive/folders/1tU_BFlQGTGyRIEAUjUrhsD-zZmnuH-CC" target="_blank"> Business adminstration</a></h3>
+                        </div>
+                        <div class="input_box1">
+                            <span class="details"></span>
+                            <h3 class="link"> <a href="https://drive.google.com/drive/folders/1tIfsKfwdvS4OZ2Tt-R_PUUfxP7y2UFnR" target="_blank"> Discrete structure</a></h3>
+                        </div>
+                        <div class="input_box1">
+                            <span class="details"></span>
+                            <h3 class="link"> <a href="https://drive.google.com/drive/folders/1tUA2kLOr6DoA5Pt-FQtG2OmzI4YyRqE3" target="_blank ">Project Managment </a></h3>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="projects">
-                <h3>updates</h3>
-                <div class="projec_data">
-                    <div class="data">
-                        <h4>recent </h4>
-                        <p> the recent updated file by the doctor</p>
-                    </div>
-                    <div class="data">
-                        <h4>most viewed</h4>
-                        <p> the most viewed file uploaded by the doctor</p>
-                    </div>
-                </div>
+        </div>

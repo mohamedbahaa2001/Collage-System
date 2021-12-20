@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
+
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
-    <title>Registration</title>
+
+    <!-- <link rel="stylesheet" href="master.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
@@ -22,7 +23,7 @@
         justify-content: center;
         align-items: center;
         padding: 10px;
-        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        background: linear-gradient(135deg, #909396, #030303);
     }
     
     .container {
@@ -48,7 +49,7 @@
         height: 3px;
         width: 30px;
         border-radius: 5px;
-        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        background: linear-gradient(135deg, #8e9194, #030303);
     }
     
     .content form .user-details {
@@ -83,7 +84,7 @@
     
     .user-details .input-box input:focus,
     .user-details .input-box input:valid {
-        border-color: #9b59b6;
+        border-color: #2e2731;
     }
     
     form .gender-details .gender-title {
@@ -117,8 +118,8 @@
     #dot-1:checked~.category label .one,
     #dot-2:checked~.category label .two,
     #dot-3:checked~.category label .three {
-        background: #9b59b6;
-        border-color: #d9d9d9;
+        background: #909396;
+        border-color: #2e2731;
     }
     
     form input[type="radio"] {
@@ -141,12 +142,12 @@
         letter-spacing: 1px;
         cursor: pointer;
         transition: all 0.3s ease;
-        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        background: linear-gradient(135deg, #8e9194, #030303);
     }
     
     form .button input:hover {
         /* transform: scale(0.99); */
-        background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+        background: linear-gradient(-135deg, #8e9194, #030303);
     }
     
     @media(max-width: 584px) {
@@ -180,7 +181,6 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
     }
     
@@ -193,15 +193,15 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 800spx;
-        height: 450px;
+        width: 900px;
+        height: 600px;
         display: flex;
-        box-shadow: 0 1px 20px rgba(135deg, #71b7e6, #9b59b6);
+        box-shadow: 0 1px 20px rgba(135deg, #8e9194, #030303);
     }
     
     .wrapper .left {
         width: 50%;
-        background: linear-gradient(to right, #71b7e6, #9b59b6);
+        background: linear-gradient(to right, #8e9194, #030303);
         padding: 30px 25px;
         border-top-left-radius: 5px;
         text-align: center;
@@ -209,8 +209,8 @@
     }
     
     .wrapper .left img {
-        margin-bottom: 10px;
-        border-bottom: 5px;
+        margin-bottom: 30px;
+        border-bottom: 20px;
     }
     
     .wrapper .left h4 {
@@ -218,7 +218,7 @@
     }
     
     .wrapper .left p {
-        font-size: 12px;
+        font-size: 20px;
     }
     
     .wrapper .right {
@@ -226,12 +226,63 @@
         background: #fff;
         border-bottom-right-radius: 5px;
         border-bottom-right-radius: 5px;
-        padding: 25px;
+        padding: 40px;
     }
     
-    .wrapper .right .info,
-    .wrapper .right .projects {
-        margin-bottom: 25px;
+    .wrapper,
+    .container1 {
+        margin-bottom: 40px;
+    }
+    
+    .right .info {
+        font-size: 25px;
+        font-weight: 500;
+        position: relative;
+    }
+    
+    .right .info::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 30px;
+        border-radius: 5px;
+        background: linear-gradient(135deg, #8e9194, #030303);
+    }
+    
+    .right .projects {
+        font-size: 25px;
+        font-weight: 500;
+        position: relative;
+    }
+    
+    .right .projects::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 30px;
+        height: 3px;
+        width: 30px;
+        border-radius: 5px;
+        background: linear-gradient(135deg, #8e9194, #030303);
+    }
+    
+    .container1 .title1 {
+        font-size: 25px;
+        font-weight: 500;
+        position: relative;
+    }
+    
+    .container1 .title1::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 30px;
+        border-radius: 5px;
+        background: linear-gradient(135deg, #8e9194, #030303);
     }
 </style>
 
@@ -241,20 +292,55 @@
         <div class="content">
             <form action="#">
                 <div class="user-details">
-                    <div class="input-box"><span class="details">Full Name</span><input type="text" placeholder="Enter your name" name="fullName" required></div>
-                    <div class="input-box"><span class="details">Username</span><input type="text" placeholder="Enter your username" name="userName" required></div>
-                    <div class="input-box"><span class="details">Email</span><input type="text" placeholder="Enter your email" name="mail" required></div>
-                    <div class="input-box"><span class="details">Phone Number</span><input type="text" placeholder="Enter your number" name="phone" required></div>
-                    <div class="input-box"><span class="details">Password</span><input type="text" placeholder="Enter your password" name="pwd" required></div>
-                    <div class="input-box"><span class="details">Confirm Password</span><input type="text" placeholder="Confirm your password" name="confirmpwd" required></div>
+                    <div class="input-box">
+                        <span class="details">Full Name</span>
+                        <input type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Username</span>
+                        <input type="text" placeholder="Enter your username" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="text" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone Number</span>
+                        <input type="text" placeholder="Enter your number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="text" placeholder="Enter your password" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Confirm Password</span>
+                        <input type="text" placeholder="Confirm your password" required>
+                    </div>
                 </div>
-                <div class="gender-details"><input type="radio" name="gender" id="dot-1"><input type="radio" name="gender" id="dot-2"><input type="radio" name="gender" id="dot-3"><span class="gender-title">you're a</span>
-                    <div class="category"><label for="dot-1"><span class="dot one"></span><span class="gender">doctor</span></label><label for="dot-2"><span class="dot two"></span><span class="gender">student</span></label></div>
+                <div class="gender-details">
+                    <input type="radio" name="gender" id="dot-1">
+                    <input type="radio" name="gender" id="dot-2">
+                    <input type="radio" name="gender" id="dot-3">
+                    <span class="gender-title">you're a</span>
+                    <div class="category">
+                        <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">doctor</span>
+          </label>
+                        <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">student</span>
+          </label>
+
+                    </div>
                 </div>
-                <div class="button"><input type="submit" value="Register"></div>
+                <div class="button">
+                    <input type="submit" value="Register">
+                </div>
             </form>
         </div>
     </div>
+
 </body>
 
 </html>
