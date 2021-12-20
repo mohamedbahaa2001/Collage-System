@@ -29,6 +29,10 @@ def contact(request):
         print("data has been saved")
     return render(request, 'contact.html')
 
+# make a about page
+def about(reguest):
+    return render(reguest, 'about.html')
+
 
 def userprofile(reguest):
     return render(reguest, 'UserProfile.html')
