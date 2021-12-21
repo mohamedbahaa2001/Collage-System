@@ -290,7 +290,8 @@
     <div class="container">
         <div class="title">Registration</div>
         <div class="content">
-            <form action="#">
+            <form action="/register" method="post" class="action">
+                {% csrf_token %}
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">Full Name</span>

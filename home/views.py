@@ -30,16 +30,28 @@ def contact(request):
     return render(request, 'contact.html')
 
 # make a about page
-def about(reguest):
-    return render(reguest, 'about.html')
+def about(request):
+    return render(request, 'about.html')
 
 
-def userprofile(reguest):
-    return render(reguest, 'UserProfile.html')
+def userprofile(request):
+    return render(request, 'UserProfile.html')
 
 
-def login(reguest):
-    return render(reguest, 'login.html')
+def login(request):
+    return render(request, 'login.html')
 
-def register(reguest):
-    return render(reguest, 'register.html')
+def register(request):
+    if request.method == 'POST':
+        # do stuff
+        print("Got Post Request")
+        name = request.POST['fullname']
+        username = request.POST['username']
+        password = request.POST['password']
+        phone = request.POST['phoneNumber']
+        email = request.POST['email']
+        ins = models.Register(name=name, username=username,
+                              password=password, phone=phone, email=email)
+        ins.save()  # save to db
+        print("data has been saved")
+    return render(request, 'register.html')
