@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from qrcode import *
+
 from home import models
 # Create your views here.
-
+data = None
 
 def home(request):
     # can pass variables to html page
@@ -55,3 +57,13 @@ def register(request):
         ins.save()  # save to db
         print("data has been saved")
     return render(request, 'register.html')
+
+def qrcode(request):
+    global data
+    if request.method == "POST":
+        data = request.POST['data']
+        img = make(data)
+        img.save("static/image/test.png")
+    else:
+        pass
+    return render(request, "qrcode.html", {'data': data})

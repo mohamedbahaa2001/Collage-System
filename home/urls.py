@@ -11,4 +11,5 @@ urlpatterns = [
     path('userprofile', views.userprofile, name='userprofile'),
     path('login', views.login, name='login'),
     path('register', views.register, name='register'),
+    path('qrcode', views.qrcode,name='qrcode'),
 ]
