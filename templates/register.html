@@ -290,7 +290,7 @@
     <div class="container">
         <div class="title">Registration</div>
         <div class="content">
-            <form action="/register" method="post" class="action">
+            <form action="/register/" method="post" class="action">
                 {% csrf_token %}
                 <div class="user-details">
                     <div class="input-box">
@@ -307,7 +307,7 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Phone Number</span>
-                        <input type="text" placeholder="Enter your number" name="phoneNumber" required>
+                        <input type="text" placeholder="Enter your number" id="phonenumber" name="phoneNumber" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Password</span>
@@ -326,11 +326,11 @@
                     <div class="category">
                         <label for="dot-1">
             <span class="dot one"></span>
-            <span class="gender">doctor</span>
+            <span class="gender" id="doctor">doctor</span>
           </label>
                         <label for="dot-2">
             <span class="dot two"></span>
-            <span class="gender">student</span>
+            <span class="gender" id="student">student</span>
           </label>
 
                     </div>

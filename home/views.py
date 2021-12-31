@@ -2,8 +2,10 @@ from django.shortcuts import render
 from qrcode import *
 
 from home import models
+
 # Create your views here.
 data = None
+
 
 def home(request):
     # can pass variables to html page
@@ -15,9 +17,9 @@ def home(request):
     return render(request, 'home.html')
 
 
-
 def material(request):
     return render(request, 'material.html')
+
 
 def contact(request):
     if request.method == 'POST':
@@ -27,9 +29,10 @@ def contact(request):
         email = request.POST['email']
         message = request.POST['message']
         ins = models.Contact(name=name, email=email, message=message)
-        ins.save() # save to db
+        ins.save()  # save to db
         print("data has been saved")
     return render(request, 'contact.html')
+
 
 # make a about page
 def about(request):
@@ -42,6 +45,7 @@ def userprofile(request):
 
 def login(request):
     return render(request, 'login.html')
+
 
 def register(request):
     if request.method == 'POST':
@@ -57,6 +61,7 @@ def register(request):
         ins.save()  # save to db
         print("data has been saved")
     return render(request, 'register.html')
+
 
 def qrcode(request):
     global data
