@@ -1,4 +1,3 @@
-
 {% block body %}
 
 <html lang="en" dir="ltr">
@@ -224,77 +223,50 @@ nav .menu{
             flex-direction: column;
         }
     }
+
+
 </style>
 
 <body>
-    <nav>
-        <div class="menu">
-          <div class="logo">
+<nav>
+    <div class="menu">
+        <div class="logo">
             <a href="{% url 'home'%}">UNIVERSTY SYSTEM</a>
-          </div>
-          <ul>
+        </div>
+        <ul>
             <li><a href="{% url 'home'%}">Home</a></li>
             <li><a href="{% url 'qrcode'%}">Attendance</a></li>
             <li><a href="{% url 'login'%}">Login</a></li>
             <li><a href="{% url 'contact'%}">Contact</a></li>
             <li><a href="{% url 'register'%}">Register</a></li>
-          </ul>
-        </div>
-      </nav>
-    <div class="container">
-        <div class="title">Registration</div>
-        <div class="content">
-            <form action="/register/" method="post" class="action">
-                {% csrf_token %}
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details">Full Name</span>
-                        <input type="text" placeholder="Enter your name" name="fullname" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Username</span>
-                        <input type="text" placeholder="Enter your username" name="username" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Email</span>
-                        <input type="text" placeholder="Enter your email" name="email" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Phone Number</span>
-                        <input type="text" placeholder="Enter your number" id="phonenumber" name="phoneNumber" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Password</span>
-                        <input type="text" placeholder="Enter your password" name="password" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Confirm Password</span>
-                        <input type="text" placeholder="Confirm your password" required>
-                    </div>
-                </div>
-                <div class="gender-details">
-                    <input type="radio" name="gender" id="dot-1">
-                    <input type="radio" name="gender" id="dot-2">
-                    <input type="radio" name="gender" id="dot-3">
-                    <span class="gender-title">you're a</span>
-                    <div class="category">
-                        <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender" id="doctor">doctor</span>
-          </label>
-                        <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender" id="student">student</span>
-          </label>
-
-                    </div>
-                </div>
-                <div class="button">
-                    <input type="submit" value="Register">
-                </div>
-            </form>
-        </div>
+        </ul>
     </div>
+</nav>
+<div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+
+        <h3>Register here</h3>
+        <hr>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {% for field in form %}
+            <div>
+                <p>{{ field.label }}: <br> {{ field }}</p>
+
+                {% for error in field.errors %}
+                <small style="color: red">{{ error }}</small>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <div class="button">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 </body>
 

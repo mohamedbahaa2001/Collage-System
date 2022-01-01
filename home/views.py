@@ -1,5 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from qrcode import *
+#for authenticates
+from django.contrib.auth import login, authenticate
+from django.contrib import messages
+from .forms import UserRegistrationForm
 
 from home import models
 
@@ -49,18 +53,18 @@ def login(request):
 
 def register(request):
     if request.method == 'POST':
-        # do stuff
-        print("Got Post Request")
-        name = request.POST['fullname']
-        username = request.POST['username']
-        password = request.POST['password']
-        phone = request.POST['phoneNumber']
-        email = request.POST['email']
-        ins = models.Register(name=name, username=username,
-                              password=password, phone=phone, email=email)
-        ins.save()  # save to db
-        print("data has been saved")
-    return render(request, 'register.html')
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            messages.success(request, f'Your account has been created. You can log in now!')
+            return redirect('login')
+    else:
+        form = UserRegistrationForm()
+
+    context = {'form': form}
+    return render(request, 'register.html', context)
+
 
 def quiz(request):
     return render(request, 'quiz.html')
