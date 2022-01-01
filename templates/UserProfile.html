@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>css</title>
-
+    <!-- <link rel="stylesheet" href="master.css"></link.> -->
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -15,13 +15,71 @@
         font-family: 'Poppins', sans-serif;
     }
 
+     ::selection {
+        color: #0b2350;
+        background: #fff;
+    }
+
+    nav {
+        position: fixed;
+        top: 0px;
+        background: #0b2350;
+        width: 100%;
+        padding: 10px 10px;
+        z-index: 12;
+    }
+
+    nav .menu {
+        max-width: 1250px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .menu .logo a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 35px;
+        font-weight: 600;
+    }
+
+    .menu ul {
+        display: inline-flex;
+    }
+
+    .menu ul li {
+        list-style: none;
+        margin-left: 7px;
+    }
+
+    .menu ul li:first-child {
+        margin-left: 0px;
+    }
+
+    .menu ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .menu ul li a:hover {
+        background: #fff;
+        color: black;
+    }
+
     body {
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 10px;
-        background: linear-gradient(135deg, #909396, #030303);
+        background: linear-gradient(135deg, #062568, #7d889c);
     }
 
     .container {
@@ -47,7 +105,7 @@
         height: 3px;
         width: 30px;
         border-radius: 5px;
-        background: linear-gradient(135deg, #8e9194, #030303);
+        background: linear-gradient(135deg, #062568, #7d889c);
     }
 
     .content form .user-details {
@@ -140,12 +198,12 @@
         letter-spacing: 1px;
         cursor: pointer;
         transition: all 0.3s ease;
-        background: linear-gradient(135deg, #8e9194, #030303);
+        background: linear-gradient(135deg, #062568, #7d889c);
     }
 
     form .button input:hover {
         /* transform: scale(0.99); */
-        background: linear-gradient(-135deg, #8e9194, #030303);
+        background: linear-gradient(-135deg, #062568, #7d889c);
     }
 
     @media(max-width: 584px) {
@@ -194,12 +252,12 @@
         width: 900px;
         height: 600px;
         display: flex;
-        box-shadow: 0 1px 20px rgba(135deg, #8e9194, #030303);
+        box-shadow: 0 1px 20px rgba(135deg, #062568, #7d889c);
     }
 
     .wrapper .left {
         width: 50%;
-        background: linear-gradient(to right, #8e9194, #030303);
+        background: linear-gradient(to right, #062568, #7d889c);
         padding: 30px 25px;
         border-top-left-radius: 5px;
         text-align: center;
@@ -246,7 +304,7 @@
         height: 3px;
         width: 30px;
         border-radius: 5px;
-        background: linear-gradient(135deg, #8e9194, #030303);
+        background: linear-gradient(135deg, #062568, #7d889c);
     }
 
     .right .projects {
@@ -263,7 +321,7 @@
         height: 3px;
         width: 30px;
         border-radius: 5px;
-        background: linear-gradient(135deg, #8e9194, #030303);
+        background: linear-gradient(135deg, #062568, #7d889c);
     }
 
     .container1 .title1 {
@@ -280,13 +338,30 @@
         height: 3px;
         width: 30px;
         border-radius: 5px;
-        background: linear-gradient(135deg, #8e9194, #030303);
+        background: linear-gradient(135deg, #062568, #7d889c);
     }
-
 
 </style>
 
 <body>
+
+<nav>
+    <div class="menu">
+        <div class="logo">
+            <a href="home">UNIVERSTY SYSTEM</a>
+        </div>
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li>
+                <a href="qrcode">Attendance</a>
+            </li>
+            <li><a href="login">Login</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="register">Register</a></li>
+        </ul>
+    </div>
+</nav>
+
 <div class="wrapper">
     <div class="left">
         <img src="https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png" alt="user" width="100">
@@ -354,31 +429,17 @@
                                 href="https://drive.google.com/drive/folders/1tUA2kLOr6DoA5Pt-FQtG2OmzI4YyRqE3"
                                 target="_blank ">Project Managment </a></h3>
                     </div>
+                    <div class="input_box">
+                        <span class="details"></span>
+                        <h3 class="link"><a
+                                href="quiz"
+                                target="_blank ">Start Quiz </a></h3>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="info_data">
-        <div class="data>
-                        <h4>Email</h4>
-
-                    </div>
-                    <div class=" data>
-
-        </div>
-    </div>
 </div>
-<div class="projects ">
-    <h3>updates</h3>
-    <div class="projec_data ">
-        <div class="data>
-                        <h4>recent </h4>
-                        <p name=" materials
-        ">the recent updated file by the doctor</p>
-    </div>
-    <div class=" data ">
-        <h4>most viewed</h4>
-        <p name=" mostviewed "> the most viewed file uploaded by the doctor</p>
-    </div>
-</div>
+</body>
+
+</html>

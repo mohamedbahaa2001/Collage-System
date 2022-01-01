@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #062568, #7d889c);
+  }
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #062568, #7d889c);
+}
+.container1 {
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.container1 .title1 {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container1 .title1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #062568, #7d889c);
+}
+.content1 form .user-details1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+form .user-details1 .input-box1 {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+form .input-box1 span.details1 {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-details1 .input-box1 input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.user-details1 .input-box1 input:focus,
+    .user-details1 .input-box1 input:valid {
+        border-color: #2e2731;
+    }
+    form .button1 input {
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg,  #062568, #7d889c);
+    }
+    
+    form .button1 input:hover {
+        /* transform: scale(0.99); */
+        background: linear-gradient(-135deg,  #062568, #7d889c);
+    }

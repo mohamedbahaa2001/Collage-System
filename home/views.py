@@ -62,6 +62,10 @@ def register(request):
         print("data has been saved")
     return render(request, 'register.html')
 
+def quiz(request):
+    return render(request, 'quiz.html')
+
+
 
 def qrcode(request):
     global data

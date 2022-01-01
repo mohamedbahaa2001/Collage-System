@@ -1,25 +1,38 @@
-<!DOCTYPE html>
-{% load static %}
+<!DOCTYPE html> {% load static %}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>QR Code</title>
+    <link rel="stylesheet" href="static/css/qrstyle.css">
+    </link.>
 </head>
 
 <body>
-    <div>
+<div class="container1">
+    <div class="title1">QR CODE</div>
+    <div class="content1">
         <form action="/qrcode" method="post">
             {% csrf_token %}
-            <h3 id="h1">Enter Data For Generating QR Code <input type="text" name="data"></h3>
-            <input type="submit" value="SUBMIT">
+            <div class="user-details1">
+                <div class="input-box1">
+                    <span class="details1">Enter Data For Generating QR Code</span>
+                    <input type="text" placeholder="Enter your Data" name="data" required>
+                </div>
+                <div class="button1">
+                    <input type="submit" value="SUBMIT">
+                </div>
+            </div>
         </form>
     </div>
     <div>
-        {% if data %}
-        <h4>Your QR Code is:</h4>
-        <img src="{% static 'image/test.png' %}"> {% endif %}
+        <div class="container1">
+            {% if data %}
+            <div class="title1">Your Qr Code is:</div>
+            <img src="{% static 'image/test.png' %}"> {% endif %}
+        </div>
     </div>
+</div>
 </body>
 
 </html>
