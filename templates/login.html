@@ -227,6 +227,7 @@ nav .menu{
         }
 
 
+
 </style>
 
 <body>
@@ -249,29 +250,34 @@ nav .menu{
 
     <div class="title">Login</div>
 
-<div class="content">
-            <form action="{% url 'userprofile' %}" method="post" class="action">
-                {% csrf_token %}
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details">Email</span>
-                        <input type="email" placeholder="Enter your email" name="email" required>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="details">Password</span>
-                        <input type="password" placeholder="Enter your password" name="password" required>
-                    </div>
-
+    <div class="content">
+        <form action="" method="post" class="action">
+            {% csrf_token %}
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input type="text" placeholder="Enter your username" name="username" id="username"required>
                 </div>
 
-
-                <div class="button">
-                    <input type="submit" value="Login">
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" placeholder="Enter your password" name="password" required>
                 </div>
 
-            </form>
-</div>
+            </div>
+
+
+            <div class="button">
+                <input type="submit" value="Login">
+            </div>
+
+        </form>
+    </div>
+    {% for message in messages %}
+    <div class="alert alert-danger">
+        <p id="message" class="alert">{{ message }}</p>
+    </div>
+    {% endfor %}
 </div>
 </body>
 

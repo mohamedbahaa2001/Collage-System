@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from qrcode import *
-#for authenticates
-from django.contrib.auth import login, authenticate
+# for authenticates
+from django.contrib.auth import login as auth_login, authenticate, logout
 from django.contrib import messages
 from .forms import UserRegistrationForm
-
+from django.contrib.auth.decorators import login_required
 from home import models
 
 # Create your views here.
@@ -43,11 +43,30 @@ def about(request):
     return render(request, 'about.html')
 
 
+@login_required(login_url='login')
 def userprofile(request):
+    context = {}
     return render(request, 'UserProfile.html')
 
 
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
+
+
 def login(request):
+    if request.method == 'POST':
+        # authenticate user login
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            auth_login(request, user)
+            return redirect('userprofile')
+        else:
+            messages.info(request, 'username or password is incorrect')
+
+    context = {}
     return render(request, 'login.html')
 
 
@@ -56,8 +75,8 @@ def register(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-
-            messages.success(request, f'Your account has been created. You can log in now!')
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Your account has been created. You can log in now {username}!')
             return redirect('login')
     else:
         form = UserRegistrationForm()
@@ -68,7 +87,6 @@ def register(request):
 
 def quiz(request):
     return render(request, 'quiz.html')
-
 
 
 def qrcode(request):

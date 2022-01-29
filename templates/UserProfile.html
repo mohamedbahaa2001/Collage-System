@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>css</title>
+    <title>user profile</title>
     <!-- <link rel="stylesheet" href="master.css"></link.> -->
 </head>
 <style>
@@ -360,13 +360,16 @@
             <li><a href="register">Register</a></li>
         </ul>
     </div>
+    <span class="logout">
+        <a href="{% url 'logout' %}">Logout</a>
+    </span>
 </nav>
 
 <div class="wrapper">
     <div class="left">
         <img src="https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png" alt="user" width="100">
-        <h4 name="user"> user's name</h4>
-        <p>front end developer</p>
+        <h4 name="user">{{request.user}}</h4>
+        <p>full stack developer</p>
     </div>
     <div class="right">
         <div class="info">
@@ -375,12 +378,9 @@
         <div class="info_data">
             <div class="data">
                 <h4>Email:</h4>
-                <p name="email">usermail15@gmail.com</p>
+                <p name="email">{{request.user.email}}</p>
             </div>
-            <div class="data" 0>
-                <h4>phone number:</h4>
-                <p name="phone">01020560589</p>
-            </div>
+
         </div>
         <div class="container1">
             <div class="title1">documents</div>
